@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <style>
+    .monster {
+      width: 300px;
+      height: 300px;
+    }
+
+    p {
+      font-size: 100px;
+    }
+
+    h1{
+      font-size: 500px;
+      margin-top: -150px;
+    }
+
+
+
+
+  </style>
+
+
+</head>
+<body>
+
+
+
+
+<script>
+
+  var enemy = 2500;
+  var damage = 250;
+
+  function monster() {
+
+    enemy = enemy - damage;
+
+    document.getElementById("hp").innerHTML = ("Kim Jong-un's HP = " + enemy);
+
+    if (enemy < 500 && enemy > 1) {
+
+
+      var f = document.getElementById('hp');
+      setInterval(function () {
+        f.style.color = (f.style.color == 'black' ? '' : 'black');
+      }, 400);
+
+
+    }
+
+    if(enemy <= 0){
+
+      enemy = 0;
+
+      document.getElementById("hp").style.color = "black";
+      document.getElementById("hp").innerHTML = ("Je hebt Kim Jong-Un vermoord");
+
+    }
+
+  }
+
+
+</script>
+<img src="kim.jpg" id="clicks" onclick="monster()">
+<p id="hp" class="hp"> </p>
+
+
+
+
+</body>
+</html>
